@@ -43,3 +43,6 @@ yarn-debug.log*
 /Mounts/PRX/*
 /public/downloads
 /config/database.yml
+
+/app/assets/builds/*
+!/app/assets/builds/.keep

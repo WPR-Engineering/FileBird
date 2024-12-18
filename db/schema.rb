@@ -10,30 +10,26 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_06_09_072831) do
-
-  # These are extensions that must be enabled in order to support this database
-  enable_extension "plpgsql"
-
+ActiveRecord::Schema[7.2].define(version: 2024_12_18_185740) do
   create_table "downloaders", force: :cascade do |t|
     t.string "ftp_path"
     t.boolean "rename"
     t.string "rename_prefix"
     t.integer "setting_id", null: false
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
     t.integer "interval"
     t.boolean "processing_status"
-    t.datetime "start_time"
+    t.datetime "start_time", precision: nil
     t.index ["setting_id"], name: "index_downloaders_on_setting_id"
   end
 
   create_table "file_listings", force: :cascade do |t|
     t.string "file_name"
     t.string "file_path"
-    t.datetime "last_modified"
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
+    t.datetime "last_modified", precision: nil
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "settings", force: :cascade do |t|
@@ -41,8 +37,8 @@ ActiveRecord::Schema.define(version: 2021_06_09_072831) do
     t.string "ftp_server"
     t.integer "ftp_port"
     t.string "ftp_password"
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
     t.string "username"
   end
 
