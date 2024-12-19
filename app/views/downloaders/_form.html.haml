@@ -1,4 +1,4 @@
-= form_with(model: downloader) do |form|
+= simple_form_for @downloader do |f|
   - if downloader.errors.any?
     #error_explanation
       %h2
@@ -7,26 +7,12 @@
       %ul
         - downloader.errors.each do |error|
           %li= error.full_message
-  .field
-    = form.label :ftp_path
-    = form.text_field :ftp_path
-  .field
-    = form.label :rename
-    = form.check_box :rename
-  .field
-    = form.label :rename_prefix
-    = form.text_field :rename_prefix
-  .field
-    = form.label :setting_id
-    = form.text_field :setting_id
-  .field
-    = form.label :interval
-    = form.text_field :interval
-  .field
-    = form.label :Backup
-    = form.check_box :backup
-  .field
-    = form.label :Backup_Path
-    = form.text_field :backup_path
-  .actions
-    = form.submit
+  = f.input :ftp_path
+  = f.input :rename
+  = f.input :rename_prefix
+
+  = f.association :setting, collection: Setting.all, label_method: :instance_name
+  = f.input :interval, as: :select, collection: [['Download every 15 min', '1'], ['download every 30 min', '2', 'download every hour', '3'], ['download once overnight, every day', '4'], ['download overnight, weekday only', '5']]
+  = f.input :backup
+  = f.input :backup_path
+  = f.button :submit

@@ -36,4 +36,4 @@
             %td= downloader.processing_status
             %td= link_to 'Show', downloader
             %td= link_to 'Edit', edit_downloader_path(downloader)
-            %td= link_to 'Destroy', downloader, method: :delete, data: { confirm: 'Are you sure?' }
+            %td= button_to "Destroy this downloader", downloader, form: {data: {turbo_confirm: "are you sure?" } }, method: :delete

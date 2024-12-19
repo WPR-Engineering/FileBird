@@ -19,6 +19,6 @@
         %td= setting.download_path
         %td= link_to 'Show', setting
         %td= link_to 'Edit', edit_setting_path(setting)
-        %td= link_to 'Destroy', setting, method: :delete, data: { confirm: 'Are you sure?' }
+        %td= button_to "Destroy", setting, form: {data: {turbo_confirm: "are you sure?" } }, method: :delete
 %br/
 = link_to 'New Setting', new_setting_path
