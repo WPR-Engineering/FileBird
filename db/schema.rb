@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.2].define(version: 2024_12_18_185740) do
+ActiveRecord::Schema[7.2].define(version: 2024_12_18_211957) do
   create_table "downloaders", force: :cascade do |t|
     t.string "ftp_path"
     t.boolean "rename"
@@ -21,6 +21,8 @@ ActiveRecord::Schema[7.2].define(version: 2024_12_18_185740) do
     t.integer "interval"
     t.boolean "processing_status"
     t.datetime "start_time", precision: nil
+    t.boolean "backup"
+    t.string "backup_path"
     t.index ["setting_id"], name: "index_downloaders_on_setting_id"
   end
 
@@ -40,6 +42,8 @@ ActiveRecord::Schema[7.2].define(version: 2024_12_18_185740) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "username"
+    t.string "download_path"
+    t.string "temporary_download_path"
   end
 
   add_foreign_key "downloaders", "settings"

@@ -23,7 +23,10 @@
     = form.label :interval
     = form.text_field :interval
   .field
-    = form.label :Status
-    = form.check_box :processing_status
+    = form.label :Backup
+    = form.check_box :backup
+  .field
+    = form.label :Backup_Path
+    = form.text_field :backup_path
   .actions
     = form.submit

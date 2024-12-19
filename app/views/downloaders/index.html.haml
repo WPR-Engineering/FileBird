@@ -17,6 +17,8 @@
           %th Rename prefix
           %th Instance
           %th Priority
+          %th Backup Enabled
+          %th Backup Path
           %th Last Download
           %th Processing
           %th{:colspan => "3"}
@@ -28,6 +30,8 @@
             %td= downloader.rename_prefix
             %td= downloader.setting.instance_name
             %td= downloader.interval
+            %td= downloader.backup
+            %td= downloader.backup_path
             %td= downloader.start_time
             %td= downloader.processing_status
             %td= link_to 'Show', downloader

@@ -64,6 +64,6 @@ class SettingsController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def setting_params
-      params.require(:setting).permit(:instance_name, :ftp_server, :ftp_port, :ftp_password, :username)
+      params.require(:setting).permit(:instance_name, :ftp_server, :ftp_port, :ftp_password, :username, :download_path, :temporary_download_path)
     end
 end

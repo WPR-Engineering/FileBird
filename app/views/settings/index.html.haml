@@ -6,6 +6,8 @@
       %th Instance name
       %th Ftp server
       %th Ftp port
+      %th Temp DL Path
+      %th WO Mount Path
       %th{:colspan => "3"}
   %tbody
     - @settings.each do |setting|
@@ -13,6 +15,8 @@
         %td= setting.instance_name
         %td= setting.ftp_server
         %td= setting.ftp_port
+        %td= setting.temporary_download_path
+        %td= setting.download_path
         %td= link_to 'Show', setting
         %td= link_to 'Edit', edit_setting_path(setting)
         %td= link_to 'Destroy', setting, method: :delete, data: { confirm: 'Are you sure?' }

@@ -70,6 +70,6 @@ class DownloadersController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def downloader_params
-      params.require(:downloader).permit(:ftp_path, :rename, :rename_prefix, :setting_id, :interval, :processing_status)
+      params.require(:downloader).permit(:ftp_path, :rename, :rename_prefix, :setting_id, :interval, :processing_status, :backup, :backup_path)
     end
 end

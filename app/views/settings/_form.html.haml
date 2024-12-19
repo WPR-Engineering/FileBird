@@ -14,6 +14,14 @@
     = form.label :ftp_server
     = form.text_field :ftp_server
   .field
+    = form.label :temporary_download_path
+    = form.text_field :temporary_download_path
+  .field
+    = form.label :wo_mount_path
+    = form.text_field :download_path
+  .div 
+    %b This is the SMB path that is mounted to the server running filebird, NOT the WO Files Share path
+  .field
     = form.label :ftp_port
     = form.number_field :ftp_port
   .field
