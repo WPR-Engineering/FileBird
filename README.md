@@ -16,6 +16,12 @@ app can be deployed with capistrano
 4. navigate to /downloaders and enter in some info
   1. you need a leading slash (/) on the FTP file path
 
+
+# App Config
+
+in settings, the WO Mount Path should point to where your network drive is mounted somethink like /mnt/wo_files, this is the final location files are copied to. 
+The Downloader temporarily saves files in /public/downloads (relative to the app itself)
+
 # ToDo
 
 - [ ] Store password in not plain text

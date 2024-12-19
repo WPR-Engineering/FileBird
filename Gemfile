@@ -83,3 +83,5 @@ gem "passenger"
 gem "haml-rails", "~> 2.0"
 
 gem "jsbundling-rails", "~> 1.3"
+
+gem 'net-ftp'
