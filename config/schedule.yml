@@ -18,6 +18,11 @@ download_daily_overnight:
   class: "FtpQueueJob"
   queue: default
   args: "4"
+download_weekday_only:
+  cron: "0 06 * * 1,2,3,4,5"
+  class: "FtpQueueJob"
+  queue: default
+  args: "5"
 cleanup_stuck_jobs:
   cron: "14 05 * * *"
   class: "JobCleanerJob"
