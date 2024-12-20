@@ -26,12 +26,14 @@ class ManualDownloadJob < ApplicationJob
 
     logger.info "Starting downloader"
     logger.debug "FTP Instance name: #{download_source.setting.instance_name}"
+
     ftp = Net::FTP.new
     ftp.connect(download_source.setting.ftp_server, download_source.setting.ftp_port)
     ftp.login(download_source.setting.username, download_source.setting.ftp_password)
     ftp.chdir(download_source.ftp_path)
     ftp.passive = true
     file_list = ftp.nlst
+
     #check if we have renaming enabled, if yes, set the final path to the renamed path. 
     if download_source.rename == true
       logger.debug "renaming is enabled"
@@ -62,7 +64,7 @@ class ManualDownloadJob < ApplicationJob
           FileUtils.cp("#{download_source.setting.temporary_download_path}/#{file}", "#{final_path}#{file}")
 
           logger.debug "updating file_listings database with new date modified"
-          update_file_db("#{file}", "#{date_modified}", "#{download_source.setting.ftp_server}")
+          update_file_db("#{file}", "#{date_modified}", "#{ftp.pwd}")
       else
         logger.info "Manual download of new files started"
         logger.debug "new file, downloading #{file}"
