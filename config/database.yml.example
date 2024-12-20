@@ -1,0 +1,22 @@
+development:
+  adapter: sqlite3
+  database: db/db_dev_db.sqlite3
+  pool: 25
+  timeout: 5000
+
+
+test:
+  adapter: postgresql
+  database: part-test
+  pool: 25
+  timeout: 5000
+  username:
+  password:
+
+production:
+  adapter: postgresql
+  database: part-prod
+  pool: 25
+  timeout: 5000
+  username:
+  password:

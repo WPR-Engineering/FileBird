@@ -21,6 +21,8 @@ gem 'jbuilder', '~> 2.7'
 # gem 'redis', '~> 4.0'
 # Use Active Model has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
+gem 'ed25519', '>= 1.2', '< 2.0'
+gem 'bcrypt_pbkdf', '>= 1.0', '< 2.0'
 gem "sprockets-rails"
 
 # Use Active Storage variant
@@ -40,8 +42,8 @@ group :development do
   # Use Capistrano for deployment
   gem 'capistrano'
   gem 'capistrano-rails'
-  gem 'capistrano-sidekiq'
-  gem "capistrano-rvm"
+  gem "capistrano-secrets-yml"
+  gem "capistrano-rbenv"
   gem "capistrano-passenger"
   gem "capistrano-yarn"
   gem "sqlite3"

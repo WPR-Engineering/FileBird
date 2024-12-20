@@ -1,5 +1,5 @@
 # config valid for current version and patch releases of Capistrano
-lock "~> 3.16.0"
+lock "~> 3.19.2"
 
 set :application, "FileBird"
 set :repo_url, "git@github.com:WPR-Engineering/FileBird.git"
@@ -14,9 +14,9 @@ set :deploy_to, "/var/www/FileBird"
 # Default value for :format is :airbrussh.
 # set :format, :airbrussh
 set :format, :pretty
-#set :rails_env, "production"
+set :rails_env, "production"
 set :rvm_type, :auto
-set :rvm_ruby_version, '3.0.0'
+set :rvm_ruby_version, '3.1.6'
 #set :rvm_custom_path, '/home/deployer/.rvm'
 
 
@@ -40,13 +40,13 @@ set :linked_files, %w{config/database.yml config/secrets.yml}
 # append :linked_dirs, "log", "tmp/pids", "tmp/cache", "tmp/sockets", "public/system"
 #set :linked_dirs, fetch(:linked_dirs, []).push('log', 'tmp/pids', 'tmp/cache', 'tmp/sockets', 'vendor/bundle', 'public/system', 'public/uploads')
 #set :linked_files, fetch(:linked_files, []).push('config/database.yml')
-set :linked_dirs, %w{log tmp/pids tmp/cache tmp/sockets vendor/bundle public/system public/downloads Mounts/PRX}
+set :linked_dirs, %w{log tmp/pids tmp/cache tmp/sockets vendor/bundle public/system public/downloads Mounts/PRX Mounts/Backup}
 
 
-SSHKit.config.command_map[:sidekiq] = "bundle exec sidekiq"
-SSHKit.config.command_map[:sidekiqctl] = "bundle exec sidekiqctl"
-set :init_system, :upstart
-set :upstart_service_name, 'sidekiq'
+#SSHKit.config.command_map[:sidekiq] = "bundle exec sidekiq"
+#SSHKit.config.command_map[:sidekiqctl] = "bundle exec sidekiqctl"
+#set :init_system, :upstart
+#set :upstart_service_name, 'sidekiq'
 
 # Default value for default_env is {}
 # set :default_env, { path: "/opt/ruby/bin:$PATH" }
