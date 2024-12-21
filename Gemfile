@@ -43,7 +43,7 @@ group :development do
   gem 'capistrano'
   gem 'capistrano-rails'
   gem "capistrano-secrets-yml"
-  gem "capistrano-rbenv"
+  gem "capistrano-rvm"
   gem "capistrano-passenger"
   gem "capistrano-yarn"
   gem "sqlite3"
@@ -79,7 +79,7 @@ gem 'slim'
 gem 'sidekiq-status'
 gem 'sidekiq-cron'
 
-gem "passenger"
+gem "passenger", require: "phusion_passenger/rack_handler"
 
 #haml is better
 gem "haml-rails", "~> 2.0"

@@ -42,7 +42,7 @@ set :linked_files, %w{config/database.yml config/secrets.yml}
 #set :linked_files, fetch(:linked_files, []).push('config/database.yml')
 set :linked_dirs, %w{log tmp/pids tmp/cache tmp/sockets vendor/bundle public/system public/downloads Mounts/PRX Mounts/Backup}
 
-
+set :passenger_in_gemfile
 #SSHKit.config.command_map[:sidekiq] = "bundle exec sidekiq"
 #SSHKit.config.command_map[:sidekiqctl] = "bundle exec sidekiqctl"
 #set :init_system, :upstart
