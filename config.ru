@@ -2,5 +2,6 @@
 
 require_relative "config/environment"
 require 'rack'
+run Rack::Directory.new '.'
 run Rails.application
 Rails.application.load_server
