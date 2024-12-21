@@ -79,7 +79,7 @@ gem 'slim'
 gem 'sidekiq-status'
 gem 'sidekiq-cron'
 
-gem "passenger", require: "phusion_passenger/rack_handler"
+gem "passenger", ">= 5.3.2", require: "phusion_passenger/rack_handler"
 
 #haml is better
 gem "haml-rails", "~> 2.0"
