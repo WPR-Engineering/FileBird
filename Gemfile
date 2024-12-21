@@ -8,7 +8,7 @@ gem 'rails', '~> 7.2', '>= 7.2.2.1'
 # Use a real db like postgres
 gem 'pg'
 # Use Puma as the app server
-#gem 'puma', '~> 5.0'
+gem 'puma'
 # Use SCSS for stylesheets
 gem 'cssbundling-rails'
 # Transpile app-like JavaScript. Read more: https://github.com/rails/webpacker
@@ -79,7 +79,7 @@ gem 'slim'
 gem 'sidekiq-status'
 gem 'sidekiq-cron'
 
-gem "passenger", require: "phusion_passenger/rack_handler"
+#gem "passenger", require: "phusion_passenger/rack_handler"
 
 #haml is better
 gem "haml-rails", "~> 2.0"
